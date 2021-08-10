@@ -36,3 +36,56 @@
     transform: rotate(360deg);
   }
 }
+
+.parent{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  justify-items: center;
+  min-width: 30rem;
+  min-height: 40rem;
+}
+.MuiCardActions-root {
+  display: flex;
+  justify-content: center;
+}
+.MuiCard-root{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.25s;
+}
+.MuiCard-root:hover{
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3);
+}
+
+
+@media (min-width:320px){
+  .parent{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+}
+@media (min-width:600px)
+{
+  .parent{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: .7rem;
+  }
+}
+@media (min-width:1025px) {
+  .parent{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.4rem;
+  }
+}
+@media (min-width:1281px){
+  .parent{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  }
+}
+
+
