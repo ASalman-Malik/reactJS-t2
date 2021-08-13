@@ -12,8 +12,9 @@ import { useStyles } from './App';
 export function Kart({price, rating, productImage, product, offerPrice, cart, setCart}) {
   const classes = useStyles();
   //const [cart, setCart] = useState(0);
-  //console.log("cart Value", cart);
+  
   const incrementCart = () => setCart(cart + 1);
+  
   return (
     <div className={'cart-list'}>
       <Card className={classes.root}>

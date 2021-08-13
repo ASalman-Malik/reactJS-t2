@@ -11,12 +11,14 @@ function  App() {
 
 
   const abckart = [
-    {
+    { 
+      id: 1,
     image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
     productType: 'Fancy Products',
     offerPrice: '$40.00 - $80.00',    
     },
     {
+      id: 2,
       image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
     tag: "Sale",
     productType: 'Special Item',
@@ -25,6 +27,7 @@ function  App() {
     rating: '⭐⭐⭐⭐⭐',   
     },
     {
+      id: 3,
     image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
     tag: 'Sale',
     productType: 'Sale Item',
@@ -32,12 +35,14 @@ function  App() {
     price: '$50.00',  
     },
     {
+      id: 4,
     image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
     productType: 'Popular Item', 
     offerPrice: '$40.00',
         rating: '⭐⭐⭐⭐⭐'  
       },
       {
+        id: 5,
         image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
         tag: 'Sale',
         productType: 'Sale Item',
@@ -46,11 +51,13 @@ function  App() {
 
       },
       {
+        id: 6,
         image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
         productType: 'Fancy Products',
         offerPrice: '$120.00 - $280.00',    
         },
         {
+           id: 7,
           image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
           tag: 'Sale',
           productType: 'Special Item',
@@ -59,6 +66,7 @@ function  App() {
           rating: '⭐⭐⭐⭐⭐',   
           },
           {
+            id: 8,
             image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
             productType: 'Popular Item', 
             offerPrice: '$40.00',
@@ -81,10 +89,12 @@ function  App() {
 //       this.setState({cart: this.data + 1})
 //     }
 //   }
+// 
   const [cart, setCart] = useState(0);
   return (
       <div> 
         <h1>{cart}</h1>
+        
          <IconButton aria-label="cart">
   <StyledBadge badgeContent={cart} color="secondary">
     <ShoppingCartIcon />
@@ -92,9 +102,18 @@ function  App() {
 </IconButton>
       
        <div className={'parent'}>
-      <Kart cart={cart} setCart={setCart} />
+      {/* <Kart cart={cart} setCart={setCart} /> */}
         
-      {abckart.map(({image, productType, price, cart, setCart, offerPrice, rating }) => (<Kart cart={cart} setCart={setCart}  productImage={image} product={productType} price={price} offerPrice={offerPrice} rating = {rating}/>))}
+      {abckart.map(({id, image, productType, price, offerPrice, rating}) => 
+      (<Kart
+      key = {id}
+      productImage = {image} 
+      product = {productType} 
+      price = {price} 
+      offerPrice = {offerPrice} 
+      rating = {rating} 
+      cart = {cart} 
+      setCart = {setCart} />))}
       
     </div>
     </div>
@@ -161,10 +180,7 @@ export default App;
 
 
 // live pratice test
-{/* <Link to="/users">User Details</Link>
-<Route path="/users">
-    <User/>
-    </Route> */}
+
 
 // {users.map({name, image})=> <User userName={user} userImage={imgage}/>)}
 // function Users({userName, userImage}){
