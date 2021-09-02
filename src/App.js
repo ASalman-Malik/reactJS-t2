@@ -93,7 +93,7 @@ function  App() {
   const [cart, setCart] = useState(0);
   return (
       <div> 
-        <h1>{cart}</h1>
+//         <h1>{cart}</h1>
         
          <IconButton aria-label="cart">
   <StyledBadge badgeContent={cart} color="secondary">
